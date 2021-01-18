@@ -1,0 +1,28 @@
+<div class="getCenter">
+<h1>
+ QR Code Generator and Downloader
+</h1>
+</div>
+
+<div >
+<ngx-qrcode class="getCenter"
+  [elementType]="elementType"
+  [errorCorrectionLevel]="correctionLevel"
+  [value]="value"
+  alt="Demo QR Code"
+  cssClass="bshadow"></ngx-qrcode>
+</div>
+<form name='myForm'>
+    <div>
+        <h2 class="getCenter">Enter URL</h2>
+    </div>
+    <div>
+        <textarea  name="title" [(ngModel)] = "model.title" #title="ngModel" placeholder="Enter Full URL"></textarea>
+    </div>
+    <div class="getCenter">
+        <input type="submit" value="submit" (click)="changeQR()">
+    </div><br>
+    <div class="getCenter">
+        <button (click)="downloadQRCode()" >Download QRCode</button>
+    </div>
+</form>
