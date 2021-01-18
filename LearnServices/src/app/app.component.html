@@ -1,0 +1,13 @@
+<h1>Learn Service</h1>
+<table border="1">
+  <tr>
+    <td>Id</td>
+    <td>Title</td>
+    <td>completed</td>
+  </tr>
+  <tr *ngFor="let item of data"> 
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.completed}}</td>
+  </tr>
+</table>

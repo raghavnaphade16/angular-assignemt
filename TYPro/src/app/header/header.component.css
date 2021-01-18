@@ -1,0 +1,8 @@
+.ng-invalid:not(form).ng-touched{
+    border: 1px solid red;
+}
+.err{
+    color: #DC3545;
+    font-size: 13px;
+    
+}

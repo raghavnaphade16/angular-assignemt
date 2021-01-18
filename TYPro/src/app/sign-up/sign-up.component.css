@@ -1,0 +1,10 @@
+.ng-invalid:not(form).ng-touched{
+    border: 1px solid red;
+}
+.err{
+    color: #DC3545;
+    font-size: 13px;
+}
+.lblAll{
+    font-size: 18px;font-weight: 500;
+}

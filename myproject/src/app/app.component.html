@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{appname}}</title>
+</head>
+<body>
+  <h1>{{appname}}</h1>
+  <app-user></app-user>
+  <app-login></app-login>
+  <button (click)="getName(myName)">Click Event Here</button><br><br>
+  <input type="text" #box1 (keyup)="myEvent('key up event  ' + box1.value)" placeholder="key up event" /><br><br>
+  <input type="text" #box2 (keyup.enter)="myEvent('key up enter event  ' + box2.value)" placeholder="keyup.enter event" /> <br><br>
+  <input type="text" #box3 (keyup.space)="myEvent('key up space event  ' + box3.value)" placeholder="keyup.space event" /> <br><br>
+  <input type="text" #box4 (keydown)="myEvent(box4.value)" placeholder="key down event" /> <br><br>
+  <input type="text" #box5 (blur)="myEvent(box5.value)" placeholder="Blur event" /> <br><br>
+  <h2>Get text value in function while typing</h2><br><br>
+  <input type="text"  (keyup)="getVal($event.target.value)" placeholder="Enter text" /><br><br>
+  <input type="text" placeholder="Enter text" #text1 /><br><br>
+  <button (click)=getVal(text1.value) >Click Me</button>
+  <h3>Diff between interpolation and property binding</h3><br>
+  <h3>Propety Binding</h3>
+  <input type="text" [disabled]="disabledBox" [value]="name" #txtP1 /><br><br>
+  <h3>interpolation</h3>
+  <input type="text" disabled={{disabledBox}} [value]="name" #txtP2 /><br><br>
+  <button (click)=enableTxtBox() >Click Me</button>
+
+</body>
+</html>

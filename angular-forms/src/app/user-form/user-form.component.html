@@ -1,0 +1,78 @@
+<div class="container">
+    <h2>User Form</h2>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
+        <div class="form-group" >
+            <label for="name">Name</label>
+            <input id="name" name="name" class="form-control" placeholder="Name" [(ngModel)] ="data.name"
+             required #nameField="ngModel"
+             [class.field-error]="form.submitted && nameField.valid"
+             />
+            <div [hidden]="nameField.valid || !form.submitted" class="alert alert-danger">Enter Name</div>
+            
+            <div class="checkbox">
+                <label><input type="checkbox" name="emailOffers" id="emailOffers" value="" [(ngModel)] ="data.emailOffers" >Email Offers</label>
+            </div>
+            <h5>User Interface Style</h5>
+            <div class="radio">
+                <label><input type="radio" name="interfaceStyle" id="lightInterface" value="light" [(ngModel)] ="data.interfaceStyle">Light</label><br>
+                <label><input type="radio" name="interfaceStyle" id="mediumInterface" value="medium"  [(ngModel)] ="data.interfaceStyle">Medium </label> <br>
+                <label><input type="radio" name="interfaceStyle" id="darkInterface" value="dark"  [(ngModel)] ="data.interfaceStyle"> Dark</label><br>
+            </div>
+            <!-- OR
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="InterfaceStyle" id="light" value="light" >
+                <label class="form-check-label" for="light">
+                  Light
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="InterfaceStyle" id="medium" value="medium">
+                <label class="form-check-label" for="medium">
+                  Medium
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="InterfaceStyle" id="dark" value="dark" >
+                <label class="form-check-label" for="dark">
+                  Dark
+                </label>
+            </div> -->
+
+
+
+            <div>
+                <label for="subscriptiontype">Subscription Type</label>
+                <select class="form-control" name="subscriptiontype" id="subscriptiontype" [(ngModel)] ="data.subscriptiontype" >
+                   <option *ngFor="let type of subscriptionTypes | async">
+
+                    {{type}}
+                   </option> 
+                    
+                </select>
+            </div>
+            <!-- <div>
+                <label for="">Subscription Type</label>
+                <select multiple class="form-control" id="sel2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div> -->
+
+            <div>
+                <label for="notes">Notes</label>
+                <textarea class="form-control" name="notes" rows="5" id="notes" [(ngModel)] ="data.notes"></textarea>
+            </div>
+            <!-- <div>
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </div> -->
+        </div>
+        <div [hidden]="!postError" class="alert alert-danger">{{postErrorMessage}}</div>
+        <button class="btn btn-primary">Send</button>
+    </form>
+</div>
+
+<p>{{form.value | json}}</p>

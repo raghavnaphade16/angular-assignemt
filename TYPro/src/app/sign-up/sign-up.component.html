@@ -1,0 +1,340 @@
+<!-- <h1>Hello</h1> -->
+<!-- signup -->
+<!-- <div
+  id="signup"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="signup"
+  aria-hidden="true"
+>
+  <div role="document">
+    <div>
+      <div>
+        <form name="register" [formGroup]="signUpForm" >
+          <div class="form-group">
+            <label for="firstName">First name*</label>
+            <input
+              type="text"
+              formControlName="firstName"
+              tabindex="0"
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              placeholder="Enter firstname"
+              required=""
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            />
+            <div
+              *ngIf="submitted && f.firstName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.firstName.errors.required">
+                First Name is required
+              </div>
+            </div>
+            <div
+              class="err"
+              *ngIf="
+                signUpForm.get('firstName').errors &&
+                signUpForm.get('firstName').dirty &&
+                signUpForm.get('firstName').errors.validFchar
+              "
+            >
+              First Letter Should be Capital
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name*</label>
+            <input
+              type="text"
+              formControlName="lastName"
+              tabindex="0"
+              class="form-control"
+              id="lastName"
+              name="lastName"
+              placeholder="Enter Last Name"
+              required=""
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            />
+            <div
+              *ngIf="submitted && f.lastName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.lastName.errors.required">
+                Last Name is required
+              </div>
+            </div>
+            <div
+              class="err"
+              *ngIf="
+                signUpForm.get('lastName').errors &&
+                signUpForm.get('lastName').dirty &&
+                signUpForm.get('lastName').errors.validFchar
+              "
+            >
+              First Letter Should be Capital
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              formControlName="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="name@gmail.com"
+              required=""
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">
+                Email must be a valid email address
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phNo">PhoneNo</label>
+            <input
+              type="text"
+              formControlName="phNo"
+              class="form-control"
+              id="phNo"
+              maxlength="10"
+              name="phNo"
+              placeholder="Enter Phone Number"
+              required=""
+              [ngClass]="{ 'is-invalid': submitted && f.phNo.errors }"
+            />
+            <div *ngIf="submitted && f.phNo.errors" class="invalid-feedback">
+              <div *ngIf="f.phNo.errors.required">Phone number is required</div>
+              <div *ngIf="f.phNo.errors.pattern">Should be number only</div>
+            </div>
+            <div
+              class="err"
+              *ngIf="
+                signUpForm.get('phNo').errors &&
+                signUpForm.get('phNo').dirty &&
+                signUpForm.get('phNo').errors.validPNo
+              "
+            >
+              Must be 10 Digit
+            </div>
+            <div
+              class="err"
+              *ngIf="
+                signUpForm.get('phNo').errors &&
+                signUpForm.get('phNo').dirty &&
+                signUpForm.get('phNo').errors.validPNChar
+              "
+            >
+              No Character Allowed
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="city">city</label>
+            <input
+              type="text"
+              formControlName="city"
+              class="form-control"
+              id="city"
+              name="city"
+              placeholder="Enter city"
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <input
+              type="submit"
+              class="btn btn-secondary"
+              name="Submit"
+              value="Send"
+              (click)="saveCall()"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <div style="height: 50px; border: 1px solid; text-align: center;font-size: 22px;font-weight: bold;padding-top: 5px;"  class="container">
+  <p>Enter Your Details</p>
+</div>
+<div class="container card" style="border: 1px solid; margin-top: 20px; width: 500px;">
+  <div
+  id="signup"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="signup"
+  aria-hidden="true"
+>
+  <div role="document">
+    <div>
+      <div>
+        <form name="register" [formGroup]="signUpForm" >
+          <div class="form-group">
+            <label class="lblAll"  for="firstName">First name*</label>
+            <input
+              type="text"
+              formControlName="firstName"
+              tabindex="0"
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              placeholder="Enter firstname"
+              required=""
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            />
+            <div
+              *ngIf="submitted && f.firstName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.firstName.errors.required">
+                First Name is required
+              </div>
+            </div>
+            <div
+              class="err"
+              *ngIf="
+                signUpForm.get('firstName').errors &&
+                signUpForm.get('firstName').dirty &&
+                signUpForm.get('firstName').errors.validFchar
+              "
+            >
+              First Letter Should be Capital
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="lblAll" for="lastName">Last Name*</label>
+            <input
+              type="text"
+              formControlName="lastName"
+              tabindex="0"
+              class="form-control"
+              id="lastName"
+              name="lastName"
+              placeholder="Enter Last Name"
+              required=""
+              [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"
+            />
+            <div
+              *ngIf="submitted && f.lastName.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.lastName.errors.required">
+                Last Name is required
+              </div>
+            </div>
+            <div
+              class="err"
+              *ngIf="
+                signUpForm.get('lastName').errors &&
+                signUpForm.get('lastName').dirty &&
+                signUpForm.get('lastName').errors.validFchar
+              "
+            >
+              First Letter Should be Capital
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="lblAll" for="email">Email*</label>
+            <input
+              type="text"
+              formControlName="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="name@gmail.com"
+              required=""
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">
+                Email must be a valid email address
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="lblAll" for="phNo">Contact No*</label>
+            <input
+              type="text"
+              formControlName="phNo"
+              class="form-control"
+              id="phNo"
+              maxlength="10"
+              name="phNo"
+              placeholder="Enter Phone Number"
+              required=""
+              [ngClass]="{ 'is-invalid': submitted && f.phNo.errors }"
+            />
+            <div *ngIf="submitted && f.phNo.errors" class="invalid-feedback">
+              <div *ngIf="f.phNo.errors.required">Phone number is required</div>
+              <div *ngIf="f.phNo.errors.pattern">Should be number only</div>
+            </div>
+            <div
+              class="err"
+              *ngIf="
+                signUpForm.get('phNo').errors &&
+                signUpForm.get('phNo').dirty &&
+                signUpForm.get('phNo').errors.validPNo
+              "
+            >
+              Must be 10 Digit
+            </div>
+            <div
+              class="err"
+              *ngIf="
+                signUpForm.get('phNo').errors &&
+                signUpForm.get('phNo').dirty &&
+                signUpForm.get('phNo').errors.validPNChar
+              "
+            >
+              No Character Allowed
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="lblAll" for="city">City</label>
+            <input
+              type="text"
+              formControlName="city"
+              class="form-control"
+              id="city"
+              name="city"
+              placeholder="Enter city"
+            />
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <input
+              type="submit"
+              class="btn btn-secondary"
+              name="Submit"
+              value="Send"
+              (click)="saveCall()"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div> -->

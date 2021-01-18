@@ -1,0 +1,107 @@
+
+<html>
+  
+  <head>
+    <title>
+	    User Validation
+	</title>
+  </head>
+
+ <body>
+ 
+    <script>
+	    
+		
+		  
+
+		  var user=prompt("please Enter username");
+		  validateUser(user);
+
+	     function validateUser(name)
+		    {
+			
+             
+			  var splitArray=name.split(" ");
+			 
+			    if(splitArray.length>=3)
+				 
+				 {
+			     
+				 if(isInitialNameValid(splitArray[0]) && isInitialNameValid(splitArray[1]) && isValidLast(splitArray[splitArray.length-1]))
+				 
+				 {
+				  
+				  
+				      
+					  alert("username saved successfully");
+					  return true;	
+				 
+				 }
+				 
+				 else
+				 
+				 {
+				   
+					alert("Invalid username..username not match with format");
+					 return false;
+				 }
+				 
+			}
+			    
+				
+				 if(splitArray.length<=2)
+				 
+				 {
+			     
+				 if(isInitialNameValid(splitArray[0]) &&  isValidLast(splitArray[splitArray.length-1]))
+				 
+				 {
+				  
+				  
+				      
+					  alert("username saved successfully");
+					  return true;	
+				 
+				 }
+				 
+				 else
+				 
+				 {
+				    
+					alert("Invalid username..username not match with format");
+					 return false;
+				 }
+				 
+			  }
+			
+			}
+			
+				 
+				 
+				 function isInitialNameValid(str)
+				 {
+				 
+				    if(str.charAt(0)===str.charAt(0).toUpperCase() && (str===(str.charAt(0)+'.') || str===str ) && str.length>=1 )
+					{
+					   return true;
+					}
+				 }
+			     
+				 function isValidLast(str)
+				 {
+				   if(str.charAt(0)===str.charAt(0).toUpperCase() && str.length>1)
+				   {
+				      return true;
+				   }
+				 }
+			  
+			       
+	
+	
+	</script>
+
+
+
+ </body>   
+
+</html>

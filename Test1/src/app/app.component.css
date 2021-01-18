@@ -1,0 +1,22 @@
+.levels{
+    height: 50px; 
+    width: 130px;
+    border: 1px solid;
+    text-align: center;
+    padding-top: 10px;
+}
+#level1{
+    margin: 0px 0px 10px 0px;
+}
+#level2{
+    margin: 0px 0px 10px 40px;
+}
+#level3{
+    margin: 0px 0px 10px 80px;
+}
+#level4{
+    margin: 0px 0px 10px 120px;
+}
+#level5{
+    margin: 0px 0px 10px 160px;
+}

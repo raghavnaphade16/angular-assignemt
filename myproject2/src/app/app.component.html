@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditional Statement</title>
+</head>
+<body>
+  <!-- <h3 *ngIf="show else elseBlock" >If Condition</h3>
+  <ng-template #elseBlock>
+    <h1>Else block</h1>
+  </ng-template>
+  <h2>If Else Block</h2>
+  <h3 *ngIf="con=='yes'; then ifB else eBle" >If Condition</h3>
+
+  <ng-template #ifB>
+    <h1>If block</h1>
+  </ng-template>
+  <ng-template #eBl>
+    <h1>Else block</h1>
+  </ng-template> -->
+  <!-- <ng-template [ngIf]="show=='red'">
+    <h1>Red Block</h1>
+  </ng-template>
+  <ng-template [ngIf]="show=='green'">
+    <h1>green Block</h1>
+  </ng-template>
+  <ng-template [ngIf]="show=='blue'">
+    <h1>blue Block</h1>
+  </ng-template> -->
+<!-- <h1>Switch</h1>
+<div [ngSwitch]="color">
+  <h2 style="color: red" *ngSwitchCase="'red'">RED</h2>
+  <h2 style="color: blue" *ngSwitchCase="'blue'">blue</h2>
+  <h2 style="color: green" *ngSwitchCase="'green'">green</h2>
+  <h2 style="color: gray" *ngSwitchDefault="'green'">gray</h2>
+
+</div> -->
+<!-- 
+<h1>For Loop</h1> -->
+<!-- <h4 *ngFor="let name of data" >
+  {{name}}
+</h4> -->
+<!--
+<h4 *ngFor="let name of dataObj" >
+  {{name.name}}
+  {{name.age}}
+</h4> -->
+<!-- <p>
+  <ngb-alert [dismissible]="false">
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+  </ngb-alert>
+</p>
+<h1>Forms</h1>
+<form #simpleForm="ngForm" (ngSubmit)="getVal(simpleForm.value)">
+  <input type="text" ngModel name="user" value=""><br>
+  <input type="text" ngModel name="age" value=""><br>
+  <input type="text" ngModel name="addr" value=""><br>
+  <button >Get Val</button>
+
+</form> -->
+
+<app-users [cData]="childData" (demo)="acceptData($event)" ></app-users>
+<h1>{{opDemo}}</h1>
+
+
+</body>
+</html>
+
+
+<!-- appi.umate@gmail.com -->

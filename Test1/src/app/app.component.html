@@ -1,0 +1,80 @@
+
+<!-- <mat-tree [dataSource]="dataSource" [treeControl]="treeControl"> -->
+    <!-- This is the tree node template for leaf nodes -->
+    <!-- <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding> -->
+      <!-- use a disabled button to provide padding for tree leaf -->
+      <!-- <button mat-icon-button disabled></button>
+      {{node.name}}
+    </mat-tree-node> -->
+    <!-- This is the tree node template for expandable nodes -->
+    <!-- <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+      <button mat-icon-button matTreeNodeToggle
+              [attr.aria-label]="'Toggle ' + node.name">
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+      {{node.name}}
+    </mat-tree-node>
+  </mat-tree> -->
+
+
+  <!-- <table>
+    <tr *ngFor='let d of data'> 
+        <td>{{d.name}}
+          <table>
+            <tr *ngFor="let item of d.child">
+                <td ><div st>{{item.name}}</div>
+                  <table>
+                    <tr *ngFor="let c of item.child">
+                        <td style="padding-left: 30px;">{{c.name}}
+                          <table>
+                            <tr *ngFor="let x of c.child">
+                                <td style="padding-left: 30px;">{{x.name}}
+                                  <table>
+                                    <tr *ngFor="let y of x.child">
+                                        <td>{{y.name}}
+                                          
+                                        </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                            </tr>
+                          </table>
+                        </td>
+                    </tr>
+                  </table>
+                </td>
+            </tr>
+          </table>
+        </td>
+    </tr>
+  </table> 
+   -->
+    <div class="container">
+      <div class="row" *ngFor='let d of data'>
+          <div class="levels" id="level1" >{{d.name}}</div>      
+          <div class="container">
+            <div class="row" *ngFor='let c of d.child'>
+                <div class="levels" id="level2">{{c.name}}</div>     
+                <div class="container">
+                  <div class="row" *ngFor='let l of c.child'>
+                      <div class="levels" id="level3" >{{l.name}}</div>      
+                      <div class="container">
+                        <div class="row" *ngFor='let x of l.child'>
+                            <div class="levels" id="level4" >{{x.name}}</div>  
+                            <div class="container">
+                              <div  class="row" *ngFor='let y of x.child'>
+                                  <div class="levels" id="level5">{{y.name}}</div>        
+                              </div> 
+                            </div>      
+                        </div> 
+                      </div>   
+                  </div> 
+                </div> 
+            </div> 
+          </div>
+      </div> 
+    </div>
+
+    <input type="submit" (click)="runMeth()">
